@@ -1,15 +1,14 @@
-/**
- * Main application file
- */
 const express = require('express');
 const http = require('http');
 const expressConfig = require('./config/express');
 const routeConfig = require('./routes');
+const mongoose = require('mongoose');
 
 // Setup server
 const app = express();
 const server = http.createServer(app);
 expressConfig(app);
+// Routes /api
 routeConfig(app);
 
 const config = {
